@@ -8,6 +8,8 @@ export const RouterConstantUtil = {
     profile: "/profile",
     services: "/services",
     artisan: "/artisan",
+    bookings: "/my-bookings",
+    messages: "/messages",
     auth: {
       login: "/auth/login",
       signup: "/auth/signup",

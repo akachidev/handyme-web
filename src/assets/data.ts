@@ -1,4 +1,4 @@
-import type { Review } from "types/global";
+import type { BookingCardProps, Review } from "types/global";
 
 export const aroundYouProviders = [
   {
@@ -193,5 +193,67 @@ export const reviewsData: Review[] = [
       "The repair was okay, but communication could have been better. I had to follow up twice to confirm the appointment time.",
     location: "Awka, Anambra State",
     date: "2nd May, 2025",
+  },
+];
+
+export const bookings: BookingCardProps[] = [
+  {
+    id: "1",
+    title: "Home & Cleaning",
+    price: 45500,
+    providerName: "Okafor Nora",
+    providerAvatar: "/images/user.jpg",
+    serviceImage:
+      "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&h=300&fit=crop",
+    location: "Awka, Anambra State, Nigeria",
+    rating: 4.1,
+    date: "28/04/2025",
+    time: "12:35 PM",
+    status: "Ongoing",
+    onClick: () => {},
+  },
+  {
+    id: "2",
+    title: "Repairs & Fixes",
+    price: 15500,
+    providerName: "Nwankwo Kennedy",
+    providerAvatar: "/images/user.jpg",
+    serviceImage:
+      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=400&h=300&fit=crop",
+    location: "Awka, Anambra State, Nigeria",
+    rating: 4.1,
+    date: "28/04/2025",
+    time: "12:35 PM",
+    status: "Pending",
+    onClick: () => {},
+  },
+  {
+    id: "3",
+    title: "Errands & Delivery",
+    price: 15500,
+    providerName: "Okafor Nora",
+    providerAvatar: "/images/user.jpg",
+    serviceImage:
+      "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=300&fit=crop",
+    location: "Awka, Anambra State, Nigeria",
+    rating: 4.1,
+    date: "28/04/2025",
+    time: "12:35 PM",
+    status: "Completed",
+    onClick: () => {},
+  },
+  {
+    id: "4",
+    title: "Repairs & Fixes",
+    price: 15500,
+    providerName: "Nwankwo Kennedy",
+    providerAvatar: "/images/user.jpg",
+    serviceImage: "/images/user.jpg",
+    location: "Awka, Anambra State, Nigeria",
+    rating: 4.1,
+    date: "28/04/2025",
+    time: "12:35 PM",
+    status: "Cancelled",
+    onClick: () => {},
   },
 ];

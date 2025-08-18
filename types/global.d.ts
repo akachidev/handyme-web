@@ -35,3 +35,18 @@ export interface Review {
   location: string;
   date: string;
 }
+
+export interface BookingCardProps {
+  id: string;
+  title: string;
+  price: number;
+  providerName: string;
+  providerAvatar: string;
+  serviceImage: string;
+  location: string;
+  rating: number;
+  date: string;
+  time: string;
+  status: "Ongoing" | "Completed" | "Pending" | "Cancelled";
+  onClick: () => void;
+}

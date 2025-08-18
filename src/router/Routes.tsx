@@ -10,7 +10,8 @@ const ResetPassword = lazy(() => import("@/view/ResetPassword"));
 const AroundYou = lazy(() => import("@/view/AroundYou"));
 const TopRated = lazy(() => import("@/view/TopRated"));
 const Recommended = lazy(() => import("@/view/Recommended"));
-import ArtisanProfile from "@/view/ArtisanProfile";
+const Bookings = lazy(() => import("@/view/MyBookings"));
+const ArtisanProfile = lazy(() => import("@/view/ArtisanProfile"));
 
 export const Routes: RouteType[] = [
   {
@@ -51,6 +52,11 @@ export const Routes: RouteType[] = [
   {
     path: RouterConstantUtil.page.artisan,
     component: ArtisanProfile,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.bookings,
+    component: Bookings,
     metadata: { isAuth: false },
   },
   {
