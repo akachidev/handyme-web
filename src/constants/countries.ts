@@ -1,0 +1,130 @@
+import type { Country } from "types/global";
+
+export const countries: Country[] = [
+  {
+    code: "NG",
+    name: "Nigeria",
+    flag: "https://flagcdn.com/32x24/ng.png",
+    dialCode: "+234",
+  },
+  {
+    code: "US",
+    name: "United States",
+    flag: "https://flagcdn.com/32x24/us.png",
+    dialCode: "+1",
+  },
+  {
+    code: "GB",
+    name: "United Kingdom",
+    flag: "https://flagcdn.com/32x24/gb.png",
+    dialCode: "+44",
+  },
+  {
+    code: "CA",
+    name: "Canada",
+    flag: "https://flagcdn.com/32x24/ca.png",
+    dialCode: "+1",
+  },
+  {
+    code: "AU",
+    name: "Australia",
+    flag: "https://flagcdn.com/32x24/au.png",
+    dialCode: "+61",
+  },
+  {
+    code: "DE",
+    name: "Germany",
+    flag: "https://flagcdn.com/32x24/de.png",
+    dialCode: "+49",
+  },
+  {
+    code: "FR",
+    name: "France",
+    flag: "https://flagcdn.com/32x24/fr.png",
+    dialCode: "+33",
+  },
+  {
+    code: "IT",
+    name: "Italy",
+    flag: "https://flagcdn.com/32x24/it.png",
+    dialCode: "+39",
+  },
+  {
+    code: "ES",
+    name: "Spain",
+    flag: "https://flagcdn.com/32x24/es.png",
+    dialCode: "+34",
+  },
+  {
+    code: "NL",
+    name: "Netherlands",
+    flag: "https://flagcdn.com/32x24/nl.png",
+    dialCode: "+31",
+  },
+  {
+    code: "BE",
+    name: "Belgium",
+    flag: "https://flagcdn.com/32x24/be.png",
+    dialCode: "+32",
+  },
+  {
+    code: "IN",
+    name: "India",
+    flag: "https://flagcdn.com/32x24/in.png",
+    dialCode: "+91",
+  },
+  {
+    code: "CN",
+    name: "China",
+    flag: "https://flagcdn.com/32x24/cn.png",
+    dialCode: "+86",
+  },
+  {
+    code: "JP",
+    name: "Japan",
+    flag: "https://flagcdn.com/32x24/jp.png",
+    dialCode: "+81",
+  },
+  {
+    code: "KR",
+    name: "South Korea",
+    flag: "https://flagcdn.com/32x24/kr.png",
+    dialCode: "+82",
+  },
+  {
+    code: "BR",
+    name: "Brazil",
+    flag: "https://flagcdn.com/32x24/br.png",
+    dialCode: "+55",
+  },
+  {
+    code: "MX",
+    name: "Mexico",
+    flag: "https://flagcdn.com/32x24/mx.png",
+    dialCode: "+52",
+  },
+  {
+    code: "AR",
+    name: "Argentina",
+    flag: "https://flagcdn.com/32x24/ar.png",
+    dialCode: "+54",
+  },
+  {
+    code: "NG",
+    name: "Nigeria",
+    flag: "https://flagcdn.com/32x24/ng.png",
+    dialCode: "+234",
+  },
+  {
+    code: "ZA",
+    name: "South Africa",
+    flag: "https://flagcdn.com/32x24/za.png",
+    dialCode: "+27",
+  },
+  {
+    code: "EG",
+    name: "Egypt",
+    flag: "https://flagcdn.com/32x24/eg.png",
+    dialCode: "+20",
+  },
+];

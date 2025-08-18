@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Handyme web" />
+    <meta name="keywords" content="Handyme" />
+    <meta name="author" content="MOSELEY" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <title>Handyme</title>
+
+    <style>
+      .display {
+        display: flex;
+      }
+
+      .preloader {
+        width: 100%;
+        height: 100%;
+        background-color: #f7f9fa;
+        position: fixed;
+        z-index: 9999999;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+      }
+
+      .preloader > .loader {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .preloader > .loader > img {
+        width: 50%;
+        height: 50%;
+        object-fit: contain;
+      }
+
+      .preloader > .loader::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        animation: spin 1s linear infinite;
+        width: 100%;
+        height: 100%;
+        border: 6px solid;
+        border-radius: 100px;
+        border-color: #00c2a8 #00c2a8 transparent #00c2a8;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root">
+      <div class="preloader display">
+        <div class="loader">
+          <img src="/logo.svg" alt="logo" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
