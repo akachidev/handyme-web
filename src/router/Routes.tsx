@@ -12,6 +12,14 @@ const TopRated = lazy(() => import("@/view/TopRated"));
 const Recommended = lazy(() => import("@/view/Recommended"));
 const Bookings = lazy(() => import("@/view/MyBookings"));
 const ArtisanProfile = lazy(() => import("@/view/ArtisanProfile"));
+const Account = lazy(() => import("@/view/account"));
+const Settings = lazy(() => import("@/view/Settings"));
+const Message = lazy(() => import("@/view/Message"));
+const Report = lazy(() => import("@/view/ReportIssue"));
+const About = lazy(() => import("@/view/About"));
+const CancellationPoolicy = lazy(() => import("@/view/Cancellation"));
+const PrivacyPolicy = lazy(() => import("@/view/PrivacyPolicy"));
+const Booking = lazy(() => import("@/view/Booking"));
 
 export const Routes: RouteType[] = [
   {
@@ -55,8 +63,48 @@ export const Routes: RouteType[] = [
     metadata: { isAuth: false },
   },
   {
-    path: RouterConstantUtil.page.bookings,
+    path: RouterConstantUtil.page.mybookings,
     component: Bookings,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.account,
+    component: Account,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.settings,
+    component: Settings,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.messages,
+    component: Message,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.report,
+    component: Report,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.cancellation,
+    component: CancellationPoolicy,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.privacy,
+    component: PrivacyPolicy,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.about,
+    component: About,
+    metadata: { isAuth: false },
+  },
+  {
+    path: RouterConstantUtil.page.booking,
+    component: Booking,
     metadata: { isAuth: false },
   },
   {

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { RouterConstantUtil } from "@/lib/RouterConstantUtils";
 import { Link, useNavigate } from "react-router";
-import { AnimatedButton } from "../ui/button";
+import { AnimatedButton } from "../ui/AnimatedButton";
 import { authAPI } from "@/lib/api/auth";
 import OTPVerification from "./OTPVerification";
 import { SuccessModal } from "../modals/SucessModal";

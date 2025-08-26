@@ -278,7 +278,7 @@ const OTPVerification: React.FC<OTPVerificationProps> = ({
             <button
               onClick={handleVerify}
               disabled={isLoading || otp.some((digit) => !digit)}
-              className="w-full bg-primary hover:bg-primary disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3.5 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95"
+              className="w-full bg-brandprimary hover:bg-brandprimary disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3.5 px-4 rounded-lg transition-all duration-200 transform hover:scale-105 active:scale-95"
             >
               {isLoading ? (
                 <div className="flex items-center justify-center space-x-2">

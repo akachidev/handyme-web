@@ -12,7 +12,7 @@ interface HorizontalServiceCardProps {
   distance?: string;
   tasksCompleted?: number;
   onClick?: () => void;
-  onBookNow?: () => void;
+  onBookNow: () => void;
 }
 
 export const HorizontalServiceCard: React.FC<HorizontalServiceCardProps> = ({
@@ -29,13 +29,14 @@ export const HorizontalServiceCard: React.FC<HorizontalServiceCardProps> = ({
   onBookNow,
 }) => {
   return (
-    <div
-      className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden cursor-pointer hover:shadow-md transition-shadow duration-300 w-full min-w-[415px] mx-auto"
-      onClick={onClick}
-    >
+    <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden cursor-pointer hover:shadow-md transition-shadow duration-300 w-full min-w-[415px] mx-auto">
       <div className="flex h-full p-3 overflow-hidden min-h-[175px]">
         {/* Left Side - Main Image */}
-        <div className="w-[150px] min-w-[120px] sm:w-[150px] h-[175px] flex-shrink-0">
+        <div
+          className="w-[150px] min-w-[120px] sm:w-[150px] h-[175px] flex-shrink-0"
+          role="button"
+          onClick={onClick}
+        >
           <img
             src={mainImage}
             alt={`${name} working`}
@@ -116,11 +117,8 @@ export const HorizontalServiceCard: React.FC<HorizontalServiceCardProps> = ({
 
           <div className="mt-auto">
             <button
-              onClick={(e) => {
-                e.stopPropagation();
-                onBookNow?.();
-              }}
-              className="w-full bg-primary text-white text-xs sm:text-sm font-medium py-2 sm:py-2.5 rounded-md hover:bg-teal-600 transition-colors duration-200"
+              onClick={onBookNow}
+              className="w-full bg-brandprimary text-white text-xs sm:text-sm font-medium py-2 sm:py-2.5 rounded-md hover:bg-teal-600 transition-colors duration-200"
             >
               Book Now
             </button>

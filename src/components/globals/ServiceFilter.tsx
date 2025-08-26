@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import { X, Search, MapPin, SlidersHorizontal, Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface FilterState {
   category: string;
@@ -132,35 +139,21 @@ const ServiceFilter: React.FC = () => {
   // Desktop Filter Row
   const DesktopFilterRow = () => (
     <div className="hidden md:flex items-center gap-4 p-4">
-      <div className="relative">
-        <select
-          value={filters.category}
-          onChange={(e) => setFilters({ ...filters, category: e.target.value })}
-          className="appearance-none bg-white border border-[#F0F0F0] rounded-lg px-4 py-2 pr-8 min-w-[120px] text-gray-700 focus:outline-none focus:border-teal-500 focus:bg-white"
-        >
-          <option value="">Category</option>
+      <Select
+        value={filters.category}
+        onValueChange={(value) => setFilters({ ...filters, category: value })}
+      >
+        <SelectTrigger className="bg-white border border-[#F0F0F0] rounded-lg px-4 py-2 min-w-[120px] text-gray-700 focus:outline-none focus:border-[#00C2A8] focus:ring-2 focus:ring-[#00C2A8] h-auto">
+          <SelectValue placeholder="Category" />
+        </SelectTrigger>
+        <SelectContent>
           {categories.map((cat) => (
-            <option className="bg-yellow-500" key={cat} value={cat}>
+            <SelectItem key={cat} value={cat}>
               {cat}
-            </option>
+            </SelectItem>
           ))}
-        </select>
-        <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
-          <svg
-            className="w-4 h-4 text-gray-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
-      </div>
+        </SelectContent>
+      </Select>
 
       {/* Search Input */}
       <div className="flex-1 relative">
@@ -171,72 +164,44 @@ const ServiceFilter: React.FC = () => {
             placeholder="What services are you looking for?"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full bg-white pl-10 pr-4 py-2 border border-[#F0F0F0] rounded-lg focus:outline-none focus:border-teal-500 focus:bg-white"
+            className="w-full bg-white pl-10 pr-4 py-2 border border-[#F0F0F0] rounded-lg focus:outline-none focus:border-[#00C2A8] focus:ring-2 focus:ring-[#00C2A8] focus:bg-white"
           />
         </div>
       </div>
 
       {/* Service Dropdown */}
-      <div className="relative">
-        <select
-          value={filters.service}
-          onChange={(e) => setFilters({ ...filters, service: e.target.value })}
-          className="appearance-none bg-white border border-[#F0F0F0] rounded-lg px-4 py-2 pr-8 min-w-[120px] text-gray-700 focus:outline-none focus:border-teal-500 focus:bg-white"
-        >
-          <option value="">Service</option>
+      <Select
+        value={filters.service}
+        onValueChange={(value) => setFilters({ ...filters, service: value })}
+      >
+        <SelectTrigger className="bg-white border border-[#F0F0F0] rounded-lg px-4 py-2 min-w-[120px] text-gray-700 focus:outline-none focus:border-[#00C2A8] focus:ring-2 focus:ring-[#00C2A8] h-auto">
+          <SelectValue placeholder="Service" />
+        </SelectTrigger>
+        <SelectContent>
           {services.map((service) => (
-            <option key={service} value={service}>
+            <SelectItem key={service} value={service}>
               {service}
-            </option>
+            </SelectItem>
           ))}
-        </select>
-        <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
-          <svg
-            className="w-4 h-4 text-gray-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
-      </div>
+        </SelectContent>
+      </Select>
 
       {/* Location Dropdown */}
-      <div className="relative">
-        <select
-          value={filters.location}
-          onChange={(e) => setFilters({ ...filters, location: e.target.value })}
-          className="appearance-none bg-white border border-[#F0F0F0] rounded-lg px-4 py-2 pr-8 min-w-[120px] text-gray-700 focus:outline-none focus:border-teal-500 focus:bg-white"
-        >
-          <option value="">Location</option>
+      <Select
+        value={filters.location}
+        onValueChange={(value) => setFilters({ ...filters, location: value })}
+      >
+        <SelectTrigger className="bg-white border border-[#F0F0F0] rounded-lg px-4 py-2 min-w-[120px] text-gray-700 focus:outline-none focus:border-[#00C2A8] focus:ring-2 focus:ring-[#00C2A8] h-auto">
+          <SelectValue placeholder="Location" />
+        </SelectTrigger>
+        <SelectContent>
           {locations.map((location) => (
-            <option key={location} value={location}>
+            <SelectItem key={location} value={location}>
               {location}
-            </option>
+            </SelectItem>
           ))}
-        </select>
-        <div className="absolute right-2 top-1/2 transform -translate-y-1/2 pointer-events-none">
-          <svg
-            className="w-4 h-4 text-gray-500"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M19 9l-7 7-7-7"
-            />
-          </svg>
-        </div>
-      </div>
+        </SelectContent>
+      </Select>
 
       {/* Filter Icon */}
       <button
@@ -252,9 +217,9 @@ const ServiceFilter: React.FC = () => {
   const MobileSearchBar = () => (
     <div className="md:hidden p-4 bg-white">
       <div className="relative">
-        <div className="flex items-center border-2 border-teal-500 rounded-full px-4 py-3 bg-white">
+        <div className="flex items-center border-2 border-[#00C2A8] rounded-full px-4 py-3 bg-white">
           <Search className="text-gray-400 w-5 h-5 mr-3" />
-          <div className="w-px h-6 bg-teal-500 mr-3"></div>
+          <div className="w-px h-6 bg-[#00C2A8] mr-3"></div>
           <input
             type="text"
             placeholder="Search services..."
@@ -264,7 +229,7 @@ const ServiceFilter: React.FC = () => {
           />
           <div className="flex items-center gap-2 ml-3">
             <button className="p-1">
-              <X className="w-5 h-5 text-teal-500" />
+              <X className="w-5 h-5 text-[#00C2A8]" />
             </button>
             <button onClick={() => setIsModalOpen(true)} className="p-1">
               <SlidersHorizontal className="w-5 h-5 text-gray-600" />
@@ -320,37 +285,23 @@ const ServiceFilter: React.FC = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
             >
-              <div className="relative">
-                <select
-                  value={filters.category}
-                  onChange={(e) =>
-                    setFilters({ ...filters, category: e.target.value })
-                  }
-                  className="w-full appearance-none bg-white border-2 border-teal-500 rounded-lg px-4 py-3 pr-10 text-[#989FB0] focus:outline-none focus:bg-white transition-all focus:shadow-lg"
-                >
-                  <option value="">Category</option>
+              <Select
+                value={filters.category}
+                onValueChange={(value) =>
+                  setFilters({ ...filters, category: value })
+                }
+              >
+                <SelectTrigger className="w-full bg-white border-2 border-[#00C2A8] rounded-lg px-4 py-3 text-[#989FB0] focus:outline-none focus:bg-white transition-all focus:shadow-lg h-auto">
+                  <SelectValue placeholder="Category" />
+                </SelectTrigger>
+                <SelectContent>
                   {categories.map((cat) => (
-                    <option key={cat} value={cat}>
+                    <SelectItem key={cat} value={cat}>
                       {cat}
-                    </option>
+                    </SelectItem>
                   ))}
-                </select>
-                <div className="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-                  <svg
-                    className="w-5 h-5 text-gray-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 9l-7 7-7-7"
-                    />
-                  </svg>
-                </div>
-              </div>
+                </SelectContent>
+              </Select>
             </motion.div>
 
             {/* Service Search */}
@@ -363,7 +314,7 @@ const ServiceFilter: React.FC = () => {
               <input
                 type="text"
                 placeholder="What services are you looking for?"
-                className="w-full bg-white border-2 border-teal-500 rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:bg-white transition-all focus:shadow-lg"
+                className="w-full bg-white border-2 border-[#00C2A8] rounded-lg px-4 py-3 text-gray-700 placeholder-gray-400 focus:outline-none focus:bg-white transition-all focus:shadow-lg"
               />
             </motion.div>
 
@@ -382,7 +333,7 @@ const ServiceFilter: React.FC = () => {
                   onChange={(e) =>
                     setFilters({ ...filters, location: e.target.value })
                   }
-                  className="w-full bg-white border-2 border-teal-500 rounded-lg px-4 py-3 pr-10 text-gray-700 placeholder-gray-400 focus:outline-none focus:bg-white transition-all focus:shadow-lg"
+                  className="w-full bg-white border-2 border-[#00C2A8] rounded-lg px-4 py-3 pr-10 text-gray-700 placeholder-gray-400 focus:outline-none focus:bg-white transition-all focus:shadow-lg"
                 />
                 <MapPin className="absolute right-3 top-1/2 transform -translate-y-1/2 text-red-500 w-5 h-5" />
               </div>
@@ -414,7 +365,7 @@ const ServiceFilter: React.FC = () => {
 
                 {/* Active Track */}
                 <motion.div
-                  className="absolute top-1/2 transform -translate-y-1/2 h-2 bg-teal-500 rounded-lg"
+                  className="absolute top-1/2 transform -translate-y-1/2 h-2 bg-[#00C2A8] rounded-lg"
                   style={{
                     left: `${
                       ((filters.priceRange[0] - 10500) / (200000 - 10500)) * 100
@@ -475,8 +426,8 @@ const ServiceFilter: React.FC = () => {
                     onClick={() => setFilters({ ...filters, rating })}
                     className={`flex items-center gap-1 px-5 py-2 rounded-2xl border-2 transition-colors ${
                       filters.rating === rating
-                        ? "bg-teal-500 border-teal-500 text-white"
-                        : "border-teal-500 text-teal-500 hover:bg-teal-50"
+                        ? "bg-[#00C2A8] border-[#00C2A8] text-white"
+                        : "border-[#00C2A8] text-[#00C2A8] hover:bg-teal-50"
                     }`}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
@@ -488,7 +439,7 @@ const ServiceFilter: React.FC = () => {
                       className={`w-4 h-4 ${
                         filters.rating === rating
                           ? "fill-white"
-                          : "fill-teal-500"
+                          : "fill-[#00C2A8]"
                       }`}
                     />
                     <span className="font-medium">{rating}</span>
@@ -506,7 +457,7 @@ const ServiceFilter: React.FC = () => {
             >
               <motion.button
                 onClick={handleApplyFilter}
-                className="w-full bg-teal-500 text-white py-3 rounded-lg font-medium hover:bg-teal-600 transition-colors"
+                className="w-full bg-[#00C2A8] text-white py-3 rounded-lg font-medium hover:bg-[#00A896] transition-colors"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

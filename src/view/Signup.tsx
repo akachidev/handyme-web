@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Eye, EyeOff, ChevronDown } from "lucide-react";
 import { RouterConstantUtil } from "@/lib/RouterConstantUtils";
 import { Link } from "react-router";
-import { AnimatedButton } from "@/components/ui/button";
+import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { modalConfigs } from "@/constants/modalConfig";
 import type { Country } from "types/global";
 import { countries } from "@/constants/countries";
@@ -628,7 +628,7 @@ const PhoneVerification: React.FC<PhoneVerificationProps> = ({
                 <div
                   className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-all duration-200 ${
                     passwordValidation.hasMinLength
-                      ? "bg-primary border-primary"
+                      ? "bg-brandprimary border-primary"
                       : "border-gray-300"
                   }`}
                 >
@@ -660,7 +660,7 @@ const PhoneVerification: React.FC<PhoneVerificationProps> = ({
                 <div
                   className={`w-4 h-4 rounded border-2 flex items-center justify-center transition-all duration-200 ${
                     passwordValidation.hasUpperAndLower
-                      ? "bg-primary border-primary"
+                      ? "bg-brandprimary border-primary"
                       : "border-gray-300"
                   }`}
                 >
@@ -701,7 +701,7 @@ const PhoneVerification: React.FC<PhoneVerificationProps> = ({
               <button
                 type="submit"
                 disabled={isLoading}
-                className="flex-1 bg-primary hover:bg-primary/90 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3.5 px-4 rounded-lg transition-all duration-200"
+                className="flex-1 bg-brandprimary hover:bg-brandprimary/90 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3.5 px-4 rounded-lg transition-all duration-200"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center space-x-2">

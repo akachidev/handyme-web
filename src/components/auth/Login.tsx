@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Eye, EyeOff } from "lucide-react";
 import { RouterConstantUtil } from "@/lib/RouterConstantUtils";
 import { Link } from "react-router";
-import { AnimatedButton } from "../ui/button";
+import { AnimatedButton } from "../ui/AnimatedButton";
 import { useAuthState } from "@/hooks/useAuthState";
 import { toast } from "react-toastify";
 

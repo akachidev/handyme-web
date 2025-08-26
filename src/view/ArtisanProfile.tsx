@@ -3,6 +3,8 @@ import { Star, ChevronLeft, Camera, Grid3X3 } from "lucide-react";
 import MainLayout from "@/components/layouts/MainLayout";
 import { ReviewCard } from "@/components/cards/ReviewCard";
 import { reviewsData } from "@/assets/data";
+import { useNavigate } from "react-router-dom";
+import { RouterConstantUtil } from "@/lib/RouterConstantUtils";
 
 // Tab Components
 const AboutTab = () => (
@@ -63,6 +65,8 @@ const Artisan = () => {
   const [activeTab, setActiveTab] = useState<
     "About" | "Job Gallery" | "Reviews"
   >("About");
+
+  const navigate = useNavigate();
 
   const tabs = [
     { name: "About" as const, component: AboutTab },
@@ -251,7 +255,10 @@ const Artisan = () => {
         <div className="bg-[#F7F9FA] pt-6">
           <div className="w-full max-w-7xl mx-auto ">
             <div className="flex gap-3 space-x-10 mb-6 bg-white w-full max-w-4xl mx-auto p-3 rounded-lg">
-              <button className="flex-1 bg-[#00C2A8] text-white py-3 rounded-lg font-medium hover:bg-teal-600 transition-colors">
+              <button
+                className="flex-1 bg-[#00C2A8] text-white py-3 rounded-lg font-medium hover:bg-teal-600 transition-colors"
+                onClick={() => navigate(RouterConstantUtil.page.booking)}
+              >
                 Request a Booking
               </button>
               <button className="w-12 h-12 flex items-center justify-center  transition-colors hover:scale-95">

@@ -97,7 +97,7 @@ const Home = () => {
                   distance={provider.distance}
                   tasksCompleted={provider.tasksCompleted}
                   onClick={() => handleCardClick("recommended")}
-                  onBookNow={() => console.log(`Book now: ${provider.name}`)}
+                  onBookNow={() => navigate(RouterConstantUtil.page.booking)}
                 />
               ))}
             </div>

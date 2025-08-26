@@ -3,7 +3,7 @@ import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RouterConstantUtil } from "@/lib/RouterConstantUtils";
 import { useNavigate } from "react-router-dom";
-import { AnimatedButton } from "../ui/button";
+import { AnimatedButton } from "../ui/AnimatedButton";
 import Notification from "../modals/Notifications";
 import AccountModal from "../modals/Account";
 
@@ -112,7 +112,7 @@ interface HamburgerMenuProps {
 const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, onClick }) => {
   return (
     <motion.button
-      className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors duration-300 relative"
+      className="md:hidden p-2 hover:bg-brandsecondary rounded-lg transition-colors duration-300 relative"
       onClick={onClick}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
@@ -171,13 +171,13 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: "Home", to: "/" },
-    { name: "Bookings", to: RouterConstantUtil.page.bookings },
+    { name: "Bookings", to: RouterConstantUtil.page.mybookings },
     { name: "Messages", to: RouterConstantUtil.page.messages },
   ];
 
   return (
     <motion.header
-      className="bg-secondary text-white m-3 rounded-xl shadow-sm cursor-pointer"
+      className="bg-[#1E2B3A] text-white m-3 rounded-xl shadow-sm cursor-pointer"
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: "easeOut" }}

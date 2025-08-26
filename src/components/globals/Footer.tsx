@@ -1,7 +1,7 @@
 import { Instagram, Facebook } from "lucide-react";
 import { motion } from "framer-motion";
 import React from "react";
-import { AnimatedButton } from "../ui/button";
+import { AnimatedButton } from "../ui/AnimatedButton";
 import { RouterConstantUtil } from "@/lib/RouterConstantUtils";
 import { useNavigate } from "react-router-dom";
 
@@ -46,7 +46,7 @@ const SocialIcon: React.FC<SocialIconProps> = ({ href, icon, delay = 0 }) => {
   return (
     <motion.a
       href={href}
-      className="w-12 h-12 border-[.8px] border-solid border-slate-700  rounded-full flex items-center justify-center hover:bg-primary transition-all duration-300"
+      className="w-12 h-12 border-[.8px] border-solid border-slate-700  rounded-full flex items-center justify-center hover:bg-brandprimary transition-all duration-300"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
@@ -98,19 +98,22 @@ const Footer: React.FC = () => {
   const footerLinks = {
     services: [
       { name: "Home", href: "/" },
-      { name: "About us", href: "/about" },
+      { name: "About us", href: RouterConstantUtil.page.about },
     ],
     booking: [
-      { name: "Booking", href: "/booking" },
-      { name: "Privacy Policy", href: "/privacy" },
+      { name: "Booking", href: RouterConstantUtil.page.mybookings },
+      { name: "Privacy Policy", href: RouterConstantUtil.page.privacy },
     ],
     contact: [
       { name: "Contact", href: "/contact" },
-      { name: "Report an issue", href: "/report" },
+      { name: "Report an issue", href: RouterConstantUtil.page.report },
     ],
     messages: [
-      { name: "Messages", href: "/messages" },
-      { name: "Cancellation Policy", href: "/cancellation" },
+      { name: "Messages", href: RouterConstantUtil.page.messages },
+      {
+        name: "Cancellation Policy",
+        href: RouterConstantUtil.page.cancellation,
+      },
     ],
   };
 
@@ -152,7 +155,7 @@ const Footer: React.FC = () => {
                 onClick={() => navigate(RouterConstantUtil.page.auth.login)}
                 className="rounded-full"
               >
-                Become a servuiceperson
+                Become an Artisan
               </AnimatedButton>
             </div>
 
@@ -232,7 +235,7 @@ const Footer: React.FC = () => {
 
             <div className="w-full mt-20">
               <motion.div
-                className="w-12 h-[2px] bg-primary mb-6"
+                className="w-12 h-[2px] bg-brandprimary mb-6"
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 transition={{ duration: 0.8, delay: 1.2 }}

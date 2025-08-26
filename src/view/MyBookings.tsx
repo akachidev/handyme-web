@@ -4,6 +4,7 @@ import BookingCard from "@/components/cards/BookingCard";
 import BookingDetailsPage from "@/components/bookings/BookingDetails";
 import type { BookingCardProps } from "types/global";
 import { bookings } from "@/assets/data";
+import CancelBooking from "@/components/bookings/CancelBooking";
 
 const MyBookings: React.FC = () => {
   const [selectedBooking, setSelectedBooking] =
@@ -11,6 +12,13 @@ const MyBookings: React.FC = () => {
   const [currentView, setCurrentView] = useState<"list" | "details" | "cancel">(
     "list"
   );
+  // const [openCancelModdal, setOpenCancelModal] = useState(false);
+
+  const handleCancel = (reason: string) => {
+    // api call here
+    console.log(reason);
+    // setOpenCancelModal(true);
+  };
 
   const bookingsWithHandlers = bookings.map((booking) => ({
     ...booking,
@@ -43,6 +51,17 @@ const MyBookings: React.FC = () => {
       />
     );
   }
+  if (currentView === "cancel" && selectedBooking) {
+    return (
+      <CancelBooking
+        onBack={() => {
+          setCurrentView("list");
+          setSelectedBooking(null);
+        }}
+        onCancel={() => handleCancel}
+      />
+    );
+  }
 
   return (
     <MainLayout>
@@ -59,8 +78,8 @@ const MyBookings: React.FC = () => {
               onClick={() => setActiveTab(tab)}
               className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
                 activeTab === tab
-                  ? "bg-primary text-white"
-                  : "bg-transparent text-gray-600 hover:bg-primary hover:text-white"
+                  ? "bg-brandprimary text-white"
+                  : "bg-transparent text-gray-600 hover:bg-brandprimary hover:text-white"
               }`}
             >
               {tab}
