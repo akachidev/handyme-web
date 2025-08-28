@@ -2,10 +2,11 @@ import { Bell, Menu, User, X } from "lucide-react";
 import React, { useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RouterConstantUtil } from "@/lib/RouterConstantUtils";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { AnimatedButton } from "../ui/AnimatedButton";
 import Notification from "../modals/Notifications";
 import AccountModal from "../modals/Account";
+import { getActiveNavItem } from "@/lib/utils";
 
 interface NavItemProps {
   to: string;
@@ -146,18 +147,20 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ isOpen, onClick }) => {
 
 const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
-  const [activeNav, setActiveNav] = React.useState("Home");
+  const [_, setActiveNav] = React.useState("Home");
   const navigate = useNavigate();
   const [openNotification, setIsOpenNotification] = useState(false);
   const triggerRef = useRef<HTMLButtonElement>(null);
   const [openAccount, setOpenAccount] = useState(false);
+  const location = useLocation();
+  const currentActiveNav = getActiveNavItem(location.pathname);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleNavClick = (path: string, navName: string) => {
-    setActiveNav(navName);
+  const handleNavClick = (path: string) => {
+    setActiveNav(path);
     setIsMobileMenuOpen(false);
     navigate(path);
   };
@@ -171,16 +174,16 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: "Home", to: "/" },
-    { name: "Bookings", to: RouterConstantUtil.page.mybookings },
+    { name: "Bookings", to: RouterConstantUtil.page.booking },
     { name: "Messages", to: RouterConstantUtil.page.messages },
   ];
 
   return (
     <motion.header
       className="bg-[#1E2B3A] text-white m-3 rounded-xl shadow-sm cursor-pointer"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+      // initial={{ y: -100, opacity: 0 }}
+      // animate={{ y: 0, opacity: 1 }}
+      // transition={{ duration: 0.5, ease: "easeOut" }}
     >
       <div className="px-4 py-3">
         <div className="flex items-center justify-between">
@@ -201,8 +204,8 @@ const Header: React.FC = () => {
                 <NavItem
                   key={item.name}
                   to={item.to}
-                  isActive={activeNav === item.name}
-                  onClick={() => handleNavClick(item.to, item.name)}
+                  isActive={currentActiveNav === item.name}
+                  onClick={() => handleNavClick(item.to)}
                 >
                   {item.name}
                 </NavItem>
@@ -300,9 +303,9 @@ const Header: React.FC = () => {
                   >
                     <NavItem
                       to={item.to}
-                      isActive={activeNav === item.name}
+                      isActive={currentActiveNav === item.name}
                       className="block"
-                      onClick={() => handleNavClick(item.to, item.name)}
+                      onClick={() => handleNavClick(item.to)}
                     >
                       {item.name}
                     </NavItem>

@@ -7,7 +7,7 @@ import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { modalConfigs } from "@/constants/modalConfig";
 import type { Country } from "types/global";
 import { countries } from "@/constants/countries";
-import { SuccessModal } from "@/components/modals/SucessModal";
+import SuccessModal from "@/components/modals/SucessModal";
 import AuthLayout from "@/components/layouts/AuthLayout";
 import OTPVerification from "@/components/auth/OTPVerification";
 import { useAuthState } from "@/hooks/useAuthState";

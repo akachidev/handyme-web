@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router";
 import { AnimatedButton } from "../ui/AnimatedButton";
 import { authAPI } from "@/lib/api/auth";
 import OTPVerification from "./OTPVerification";
-import { SuccessModal } from "../modals/SucessModal";
+import SuccessModal from "../modals/SucessModal";
 import { modalConfigs } from "@/constants/modalConfig";
 import { toast } from "react-toastify";
 

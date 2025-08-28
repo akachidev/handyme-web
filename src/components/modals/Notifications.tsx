@@ -252,7 +252,7 @@ const Notification: React.FC<NotificationModalProps> = ({
               }`}
             >
               <div className="p-2">
-                {groupedNotifications.map((group, groupIndex) => (
+                {groupedNotifications.map((group, _) => (
                   <div key={group.date} className="mb-4 last:mb-0">
                     <h4 className="text-sm font-medium text-gray-900 px-2 py-2 sticky top-0 bg-white">
                       {group.date}

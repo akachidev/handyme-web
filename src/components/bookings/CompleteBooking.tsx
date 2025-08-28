@@ -17,7 +17,7 @@ interface Props {
 }
 
 const CompleteBooking = ({ onContinue, formData, setFormData }: Props) => {
-  const [uploadedFile, setUploadedFile] = useState(null);
+  const [_, setUploadedFile] = useState(null);
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(
     formData.date ? new Date(formData.date) : undefined
   );

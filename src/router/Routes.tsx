@@ -12,7 +12,7 @@ const TopRated = lazy(() => import("@/view/TopRated"));
 const Recommended = lazy(() => import("@/view/Recommended"));
 const Bookings = lazy(() => import("@/view/MyBookings"));
 const ArtisanProfile = lazy(() => import("@/view/ArtisanProfile"));
-const Account = lazy(() => import("@/view/account"));
+const Account = lazy(() => import("@/view/Account"));
 const Settings = lazy(() => import("@/view/Settings"));
 const Message = lazy(() => import("@/view/Message"));
 const Report = lazy(() => import("@/view/ReportIssue"));

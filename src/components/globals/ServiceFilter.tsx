@@ -225,7 +225,7 @@ const ServiceFilter: React.FC = () => {
             placeholder="Search services..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="flex-1 outline-none text-gray-700"
+            className="flex-1 bg-white outline-none text-gray-700"
           />
           <div className="flex items-center gap-2 ml-3">
             <button className="p-1">

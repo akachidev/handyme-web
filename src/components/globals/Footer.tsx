@@ -18,10 +18,10 @@ const FooterLink: React.FC<FooterLinkProps> = ({
 }) => {
   return (
     <motion.li
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      // initial={{ opacity: 0, y: 20 }}
+      // whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay }}
-      viewport={{ once: true }}
+      // viewport={{ once: true }}
       className="w-full"
     >
       <motion.a
@@ -72,18 +72,18 @@ const FooterSection: React.FC<FooterSectionProps> = ({
 }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      // initial={{ opacity: 0, y: 30 }}
+      // whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay }}
-      viewport={{ once: true }}
+      // viewport={{ once: true }}
     >
       {title && (
         <motion.h3
           className="text-[#D3D8DE] font-bold mb-6 text-[12px] capitalize tracking-wider"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.5, delay: delay + 0.2 }}
-          viewport={{ once: true }}
+          // initial={{ opacity: 0 }}
+          // whileInView={{ opacity: 1 }}
+          // transition={{ duration: 0.5, delay: delay + 0.2 }}
+          // viewport={{ once: true }}
         >
           {title}
         </motion.h3>
@@ -101,7 +101,7 @@ const Footer: React.FC = () => {
       { name: "About us", href: RouterConstantUtil.page.about },
     ],
     booking: [
-      { name: "Booking", href: RouterConstantUtil.page.mybookings },
+      { name: "Booking", href: RouterConstantUtil.page.booking },
       { name: "Privacy Policy", href: RouterConstantUtil.page.privacy },
     ],
     contact: [
@@ -128,10 +128,10 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <motion.div
             className="flex flex-col justify-between h-full"
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
+            // initial={{ opacity: 0, x: -50 }}
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 0.6 }}
+            // viewport={{ once: true }}
           >
             <div>
               <motion.div
@@ -176,10 +176,10 @@ const Footer: React.FC = () => {
 
           <motion.div
             className="flex flex-col justify-start h-full "
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            viewport={{ once: true }}
+            // initial={{ opacity: 0, x: 50 }}
+            // whileInView={{ opacity: 1, x: 0 }}
+            // transition={{ duration: 0.6, delay: 0.2 }}
+            // viewport={{ once: true }}
           >
             <FooterSection title="Services" delay={0.3}>
               <div className="grid grid-cols-2 md:grid-cols-4 ">
@@ -236,10 +236,10 @@ const Footer: React.FC = () => {
             <div className="w-full mt-20">
               <motion.div
                 className="w-12 h-[2px] bg-brandprimary mb-6"
-                initial={{ width: 0 }}
-                whileInView={{ width: 48 }}
-                transition={{ duration: 0.8, delay: 1.2 }}
-                viewport={{ once: true }}
+                // initial={{ width: 0 }}
+                // whileInView={{ width: 48 }}
+                // transition={{ duration: 0.8, delay: 1.2 }}
+                // viewport={{ once: true }}
               />
               <div className="space-y-2">
                 <motion.p
@@ -251,10 +251,10 @@ const Footer: React.FC = () => {
                 </motion.p>
                 <motion.div
                   className="flex justify-between items-center"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 1.3 }}
-                  viewport={{ once: true }}
+                  // initial={{ opacity: 0, y: 20 }}
+                  // whileInView={{ opacity: 1, y: 0 }}
+                  // transition={{ duration: 0.5, delay: 1.3 }}
+                  // viewport={{ once: true }}
                 >
                   <motion.p
                     className="text-white  text-[16px] m-0 p-0 leading-tight"
@@ -265,10 +265,10 @@ const Footer: React.FC = () => {
                   </motion.p>
                   <motion.p
                     className="text-gray-400 text-[12px] m-0 p-0"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ duration: 0.5, delay: 1.4 }}
-                    viewport={{ once: true }}
+                    // initial={{ opacity: 0 }}
+                    // whileInView={{ opacity: 1 }}
+                    // transition={{ duration: 0.5, delay: 1.4 }}
+                    // viewport={{ once: true }}
                   >
                     © {new Date(Date.now()).getFullYear()} — Copyright
                   </motion.p>
